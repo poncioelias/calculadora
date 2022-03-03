@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    
+    <script> 
+    </script> 
+
+  
+    <style>
+
+
+      :root {
+
+      --preto: #505191;
+      --dkazul: #0d314b;
+      --black: #16135c;
+      --dkblue: #364b0d;
+      --plum: #0e1e5c;    
+      --hotmag: #c4992e;
+      --magenta: #dba721;
+      --aqua: #51f542;
+      --white: #f8f7fa;
+      --font-size: 1.3rem;
+      --mono: "Oxygen mono", monospace;
+      --sans: Oxygen, sans-serif;
+      }
+
+
+      /* border box model: https://css-tricks.com/box-sizing/ */
+
+      html {
+      box-sizing: border-box;
+      text-align: right;
+      }
+
+      *,
+      *::before,
+      *::after {
+      box-sizing: inherit;
+      }
+
+
+      /* generic styles for the page */
+
+      body {
+      padding: 0;
+      margin: 0;
+      font-family: var(--sans);
+      background-color: var(--black);
+      color: var(--white);
+      font-size: var(--font-size);
+      }
+
+      h1,
+      h2,
+      h3 {
+      margin: 0;
+      }
+
+      a {
+      color: var(--magenta);
+      }
+
+      a:hover {
+      color: var(--hotmag);
+      text-decoration: none;
+      }
+
+      img {
+      width: 100%;
+      }
+
+
+      /* background color divs */
+
+      .section-plum {
+      background-color: var(--plum);
+      }
+
+      .section-blue {
+      background-color: var(--dkazul);
+      }
+
+      .gradient {
+      background: linear-gradient(90deg, rgb(2, 1, 2) 0%, rgba(134, 251, 251, 1) 100%);
+      height: 2px;
+      }
+
+
+
+      .calculadora {
+        margin-top: 40px;
+        border: solid 1px rgba(36, 54, 190, 0.356);
+        padding: 20px;
+        background-color: #a19ce0;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px rgb(4, 0, 17);
+      }
+      
+      .resultado {
+        text-align: right;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border: solid 1px rgb(17, 0, 17);
+        box-shadow: 1px 1px 1px rgb(17, 0, 17);
+        height: 80px;  
+      }
+
+      .btn{
+        width: 60px;
+        height: 50px;
+        margin: 5px;
+        box-shadow: 1px 1px 1px rgb(17, 0, 17);
+        color: #cdcde6;
+        background:#26224d ;
+        
+      }
+
+      .clear{
+        width: 130px;
+      }
+
+      .enter{
+        height: 110px;
+      }
+      
+      .pontoZero{
+        margin-top: -60px;
+      }
+
+      .ponto{
+        width: 130px;
+      }
+
+      .bordaTela{
+
+        border: solid 2px rgb(17, 0, 17);
+        box-shadow: 1px 1px 1px rgb(17, 0, 17);
+
+      }
+
+      /* introdução*/
+
+      #intro {
+          padding: 4rem 1rem 10rem 1rem;
+          padding-bottom: 10rem;
+          max-width: 1200px;
+          margin: 0 auto;
+      }
+
+      #intro p {
+          font-size: 1rem;
+          line-height: 1.5;
+      }
+
+      #intro .name {
+          font-family: var(--mono);
+          font-size: 1rem;
+      }
+
+      .name span {
+          font-family: var(--sans);
+          font-size: 4rem;
+          color: var(--aqua);
+          display: block;
+          font-weight: 300;
+      }
+
+      #intro h2 {
+          font-size: 4rem;
+      }
+
+      
+    </style>
+  </head>
+
+  <body>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <section id="intro">
+            <p class="name">Prazer sou o <span>Bruno Vieira.</span></p>
+            <h2>Estudante na FATEC.</h2>
+            <p>
+              Segue uma calculadora feita para te auxiliar nas tecnologias:<br>
+              HTML, CSS e JavaScript.
+            </p>
+            <p>
+              Trabalho a 13 anos na 
+              <a
+                href="https://teltelecom.com.br/"
+                target="_blank"
+                >Tel Telecomunicações</a
+              >.
+              <p>Contato: (17) 98144-2473 </p>
+
+            </p>
+          </section>
+        </div>
+        <div class="col-md-6">
+        <div class="col d-flex justify-content-center">
+          <br />
+          <div class="calculadora">
+            <input type="text" class="form-control resultado" placeholder="0" disabled="disabled" />          
+            <hr class="bordaTela"/>
+            <div class="row">
+              <button type="button" class="btn btn-lg btn-dark font-weight-light clear">C</button>
+              <button type="button" class="btn btn-lg btn-dark font-weight-light">/</button>
+              <button type="button" class="btn btn-lg btn-dark font-weight-light">X</button>
+            </div>
+
+            <div class="row">
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">7</button>
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">8</button>
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">9</button>
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">-</button>
+            </div>
+
+            <div class="row">
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">4</button>
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">5</button>
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">6</button>
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">+</button>
+            </div>       
+            
+            <div class="row">
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">1</button>
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">2</button>
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">3</button>
+              <button type="button" class="btn btn-dark btn-lg font-weight-light enter">=</button>
+            </div>               
+
+            <div class="row pontoZero">
+              <button type="button" class="btn btn-dark btn-lg font-weight-light">0</button>
+              <button type="button" class="btn btn-dark btn-lg font-weight-light ponto">.</button>
+            </div>                 
+            
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  </body>
+  
+</html>
